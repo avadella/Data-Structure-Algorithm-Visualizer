@@ -10,13 +10,13 @@ ES7 React/Redux/GraphQL/React-Native snippets
 JavaScript and TypeScript Nightly
 
 
-## Client vs Server Side componets
-every componet in our src/app/componet file will be server side automatically, this means it takes less memory, but we arent allowed to have interacatability. 
-To make a componet client side, we have to add 'use client'; to the file.
+## Client vs Server Side components
+every component in our src/app/component file will be server side automatically, this means it takes less memory, but we arent allowed to have interacatability. 
+To make a component client side, we have to add 'use client'; to the file.
 
 
 ## Getting Data 
-UseState or UseEffect is client side and takes large amounts of memory so we try to use stuff like fetch in our serevr side componets 
+UseState or UseEffect is client side and takes large amounts of memory so we try to use stuff like fetch in our serevr side components 
 const res = await fetch('url'); (note our page function must have async in it)
 we are saying this is an asynchronus function, where our variable res is a const promise variable (we dont have data in it just yet ut there will be and we need it before we render the webpage)
 
@@ -28,7 +28,7 @@ we can do this by adding const res = await fetch('url', {next : {revalidate: 10}
 or use {cache : 'no-store'} if you dont want to cache and show the most up to data data 
 
 ## Dynamic vs Static Rendering 
-Static, page/componet is cached so the data isnt downloaded every time, dyanmic is everytime the page is opened it redownloads the data and renders it for the user by using cache we can tell next.js what pages will be static vs dyanmic when run, to test this you will have to use npm build and npm start as dev makes everything static
+Static, page/component is cached so the data isnt downloaded every time, dyanmic is everytime the page is opened it redownloads the data and renders it for the user by using cache we can tell next.js what pages will be static vs dyanmic when run, to test this you will have to use npm build and npm start as dev makes everything static
 
 ## Tailwind  https://tailwindcss.com/docs/installation/using-vite
 + Padding 
