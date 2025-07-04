@@ -41,7 +41,6 @@ export default function Home() {
                     return <AlgorithmCard key = {e.key} title={e.title} description={e.description}  imagePath={e.imagePath}/>;
                 })}
         </div>
-        <Link href = "/Users"> users </Link>
         <Footer/>
    </main>
   );
