@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Navbar from "./componets/navbar";
-import AlgorithmCard from "./componets/AlgorithmCard";
-import Footer from "./componets/footer";
-import About from "./componets/about";
+import Navbar from "./components/navbar";
+import AlgorithmCard from "./components/AlgorithmCard";
+import Footer from "./components/footer";
+import About from "./components/about";
 
 const AlgorithmChoices = [
     {
@@ -45,7 +45,6 @@ export default function Home() {
                     return <AlgorithmCard key = {e.key} title={e.title} description={e.description} routerPath={e.routerPath} imagePath={e.imagePath}/>;
                 })}
         </div>
-        <Link href = "/Users"> users </Link>
         <Footer/>
    </main>
   );
