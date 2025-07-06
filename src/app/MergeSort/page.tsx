@@ -2,6 +2,8 @@
 import React, { useState, useRef } from 'react';
 import MergeArray from './MergeArray'
 import { motion } from 'framer-motion';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 const page = () => {
 
@@ -45,23 +47,29 @@ const page = () => {
     };
 
     return (
-        <div className = 'flex flex-col items-center'>
-            <motion.div  className = 'flex flex-row gap-2 m-5'>
-                {arrayData.map((e)=> (<MergeArray key={e.id} data={e.value}/>))}
-            </motion.div>
-            <div className = 'flex flex-row items-center gap-5 '>
-                <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded'> Shuffle </button>
-                <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded'> Reset </button>
-                <input 
-                    type="number" 
-                    name="insertData" 
-                    value={insertValue}
-                    onChange = {e => setInsertValue(e.target.value)}
-                    className='rounded-lg bg-structureFill px-4 py-2 mb-4'
-                />
-                <button onClick = {insertArray} className ='mb-4 px-4 py-2 bg-softgray text-white rounded'> Insert </button>
+        <main>
+            <Navbar/>
+            <div className = 'min-h-[70vh] bg-softgray m-3 px-1.5 py-1.5'>
+            <div className = 'min-h-[70vh] bg-boxbg px-0.5 py-0.5'>
+                <motion.div className = 'flex flex-row justify-center gap-2 m-5'>
+                    {arrayData.map((e)=> (<MergeArray key={e.id} data = {e.value}/>))}
+                </motion.div>
+                <div className = 'flex flex-row justify-center gap-5 m-5'>
+                    <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Shuffle </button>
+                    <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Reset </button>
+                    <input 
+                        type="number" 
+                        name="insertData" 
+                        value={insertValue}
+                        onChange = {e => setInsertValue(e.target.value)}
+                        className = 'rounded-lg bg-structureFill px-4 py-2 mb-4'
+                    />
+                    <button onClick = {insertArray} className ='mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Insert </button>
+                </div>
             </div>
-        </div>
+            </div>
+            <Footer/>
+        </main>
     )
 }
 
