@@ -1,12 +1,21 @@
 import React from 'react'
 import Link from "next/link";
+import Image from "next/image";
 import { IoLogoGithub } from "react-icons/io";
 import { TiHome } from "react-icons/ti";
 
 const navbar = () => {
   return (
-    <nav className = 'mx-auto py-5 flex items-center justify-between bg-navfooter text-bold text-fontLight rounded-lg'>
-        <div className = 'text-fontLight font-bold px-5'>Algorithm Visualizer</div>
+    <nav className = 'mx-auto py-3 flex items-center justify-between bg-navfooter text-bold text-fontLight rounded-lg'>
+        <div className = 'text-fontLight font-bold px-2.5'>
+          <Image 
+            src="/color-logo.png" 
+            alt="Algorithm Visualizer" 
+            width={200} 
+            height={200}
+            className="h-12 w-auto"
+          />
+        </div>
         <div className="flex flex-nowrap items-center">
           <div className="relative group">
             <button className="px-2.5">Algorithm</button>
