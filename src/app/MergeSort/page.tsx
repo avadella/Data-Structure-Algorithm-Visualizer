@@ -3,7 +3,6 @@ import React, { useState, useRef } from 'react';
 import MergeArray from './MergeArray'
 import { motion } from 'framer-motion';
 
-
 const page = () => {
 
     type ArrayItem = { id: number; value: number };
@@ -51,16 +50,16 @@ const page = () => {
                 {arrayData.map((e)=> (<MergeArray key={e.id} data={e.value}/>))}
             </motion.div>
             <div className = 'flex flex-row items-center gap-5 '>
-                <button onClick={shuffleArray} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Shuffle </button>
-                <button onClick={resetArray} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Reset </button>
+                <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded'> Shuffle </button>
+                <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded'> Reset </button>
                 <input 
                     type="number" 
                     name="insertData" 
                     value={insertValue}
                     onChange = {e => setInsertValue(e.target.value)}
-                    className='rounded-lg bg-boxbg px-4 py-2 mb-4'
+                    className='rounded-lg bg-structureFill px-4 py-2 mb-4'
                 />
-                <button onClick={insertArray} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Insert </button>
+                <button onClick = {insertArray} className ='mb-4 px-4 py-2 bg-softgray text-white rounded'> Insert </button>
             </div>
         </div>
     )
