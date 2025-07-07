@@ -1,10 +1,12 @@
 'use client';
 import React, { useState} from 'react';
 import Array from '../Structures/Visualization/Array'
-import { motion } from 'framer-motion';
 import { initialArray } from '../Structures/ArrayItem';
 import { useArray } from '../Hooks/useArray'
 import { mergeSort } from '../Algorithms/MergeSortAlgo'
+import { motion } from 'framer-motion';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 
 const page = () => {
@@ -15,7 +17,7 @@ const page = () => {
         const value = parseInt(input);
         insertValue(value);
         setInput('');
-    };
+    }
 
     const handleMerge = () => {
         const newArray = [...arrayData];
@@ -24,24 +26,30 @@ const page = () => {
     }
 
     return (
-        <div className = 'flex flex-col items-center'>
-            <motion.div className = 'flex flex-row gap-2 m-5'>
-                {arrayData.map((e)=> (<Array key={e.key} value={e.value}/>))}
-            </motion.div>
-            <div className = 'flex flex-row items-center gap-5 '>
-                <button onClick={shuffleArray} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Shuffle </button>
-                <button onClick={resetArray} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Reset </button>
-                <input 
-                    type="number" 
-                    name="insertData" 
-                    value={input}
-                    onChange = {e => setInput(e.target.value)}
-                    className='rounded-lg bg-boxbg px-4 py-2 mb-4'
-                />
-                <button onClick={handleInsert} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> Insert </button>
-                <button onClick={handleMerge} className='mb-4 px-4 py-2 bg-blue-500 text-white rounded'> MergeSort </button>
+        <main>
+            <Navbar/>
+            <div className = 'min-h-[70vh] bg-softgray m-3 px-1.5 py-1.5'>
+            <div className = 'min-h-[70vh] bg-boxbg px-0.5 py-0.5'>
+                <motion.div className = 'flex flex-row justify-center gap-5 m-5'>
+                    {arrayData.map((e)=> (<Array key = {e.key} value = {e.value}/>))}
+                </motion.div>
+                <div className = 'flex flex-row items-center gap-5 '>
+                    <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Shuffle </button>
+                    <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Reset </button>
+                    <input 
+                        type="number" 
+                        name="insertData" 
+                        value={input}
+                        onChange = {e => setInput(e.target.value)}
+                        className = 'rounded-lg bg-structureFill px-4 py-2 mb-4'
+                    />
+                    <button onClick = {handleInsert} className = 'mb-4 px-4 py-2 bg-soft-gray text-white rounded cursor-pointer'> Insert </button>
+                    <button onClick = {handleMerge} className = 'mb-4 px-4 py-2 bg-soft-gray text-white rounded cursor-pointer'> MergeSort </button>
+                </div>
             </div>
-        </div>
+            </div>
+            <Footer/>
+        </main>
     )
 }
 
