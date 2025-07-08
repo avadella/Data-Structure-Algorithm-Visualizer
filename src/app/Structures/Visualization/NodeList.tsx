@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { ArrayItem } from '../ArrayItem';
+import { NodeItem } from '../NodeItem';
 
-const Array = (props : ArrayItem) => {
+const NodeList = (props : NodeItem) => {
   return (
     <motion.div 
         layout
@@ -14,5 +14,5 @@ const Array = (props : ArrayItem) => {
   )
 }
 
-export default Array
+export default NodeList
 

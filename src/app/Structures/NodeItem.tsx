@@ -1,9 +1,9 @@
-export interface ArrayItem { 
+export interface NodeItem { 
     key: number; 
     value: number 
 }
 
-export const initialArray: ArrayItem[] = [
+export const initialArray: NodeItem[] = [
         { key: 1, value: 23 },
         { key: 2, value: 17 },
         { key: 3, value: 5 },

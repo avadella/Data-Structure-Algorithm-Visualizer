@@ -1,7 +1,7 @@
 'use client';
 import React, { useState} from 'react';
-import Array from '../Structures/Visualization/Array'
-import { initialArray } from '../Structures/ArrayItem';
+import NodeList from '../Structures/Visualization/NodeList'
+import { initialArray } from '../Structures/NodeItem';
 import { useArray } from '../Hooks/useArray'
 import { mergeSort } from '../Algorithms/MergeSortAlgo'
 import { motion } from 'framer-motion';
@@ -28,14 +28,14 @@ const page = () => {
     return (
         <main>
             <Navbar/>
-            <div className = 'min-h-[70vh] bg-softgray m-3 px-1.5 py-1.5'>
+            <div className = 'min-h-[70vh] bg-borderGreen m-3 px-1.5 py-1.5'>
                 <div className = 'min-h-[70vh] bg-boxbg px-0.5 py-0.5'>
                     <motion.div className = 'flex flex-row justify-center gap-5 m-5'>
-                        {arrayData.map((e)=> (<Array key = {e.key} value = {e.value}/>))}
+                        {arrayData.map((e)=> (<NodeList key = {e.key} value = {e.value}/>))}
                     </motion.div>
                     <div className = 'flex flex-row justify-center gap-5 '>
-                        <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Shuffle </button>
-                        <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Reset </button>
+                        <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Shuffle </button>
+                        <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Reset </button>
                         <input 
                             type="number" 
                             name="insertData" 
@@ -43,8 +43,8 @@ const page = () => {
                             onChange = {e => setInput(e.target.value)}
                             className = 'rounded-lg bg-structureFill px-4 py-2 mb-4'
                         />
-                        <button onClick = {handleInsert} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Insert </button>
-                        <button onClick = {handleMerge} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> MergeSort </button>
+                        <button onClick = {handleInsert} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Insert </button>
+                        <button onClick = {handleMerge} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> MergeSort </button>
                     </div>
                 </div>
             </div>

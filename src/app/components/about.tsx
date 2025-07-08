@@ -2,8 +2,8 @@ import React from 'react'
 
 const about = () => {
   return (
-    <div className = "mx-auto my-3 py-5 flex flex-col items-center justify-between bg-softgray text-bold rounded-lg">
-      <h2 className = "text-fontLight px-5 text-center w-full px-2.5 pb-1.5 text-2xl font-bold">
+    <div className = "mx-auto my-3 py-5 flex flex-col items-center justify-between bg-borderGreen text-bold rounded-lg">
+      <h2 className = "text-fontLight px-5 text-center w-full pb-1.5 text-2xl font-bold">
         Data Structure & Algorithm Visualizer 
       </h2>
       <h1 className = "text-fontLight text-lg px-9 text-center w-full">
