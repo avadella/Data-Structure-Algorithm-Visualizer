@@ -1,7 +1,7 @@
 'use client';
 import React, { useState} from 'react';
-import Array from '../Structures/Visualization/Array'
-import { initialArray } from '../Structures/ArrayItem';
+import NodeList from '../Structures/Visualization/NodeList'
+import { initialArray } from '../Structures/NodeItem';
 import { useArray } from '../Hooks/useArray'
 import { mergeSort } from '../Algorithms/MergeSortAlgo'
 import { motion } from 'framer-motion';
@@ -36,23 +36,23 @@ const page = () => {
         <main>
             <Navbar/>
             <div className = 'flex flex-row min-h-[70vh]'>
-                <div className = 'flex-1 bg-softgray px-1.5 py-1.5 rounded-l-lg flex flex-col justify-center rounded m-3'>
+                <div className = 'flex-1 bg-borderGreen px-1.5 py-1.5 rounded-l-lg flex flex-col justify-center rounded m-3'>
                     <div className = 'bg-boxbg py-0.5 rounded-l-lg flex flex-col flex-1 justify-center rounded'>
-                        <motion.div className = 'flex flex-row justify-center items-center gap-5 m-5'>
-                            {arrayData.map((e)=> (<Array key = {e.key} value = {e.value}/>))}
+                        <motion.div className = 'flex flex-row justify-center gap-5 m-5'>
+                            {arrayData.map((e)=> (<NodeList key = {e.key} value = {e.value}/>))}
                         </motion.div>
                         <div className = 'flex flex-row justify-center gap-5'>
-                            <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Shuffle </button>
-                            <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Reset </button>
+                            <button onClick = {shuffleArray} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Shuffle </button>
+                            <button onClick = {resetArray} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Reset </button>
                             <input 
-                                type = 'number' 
-                                name = 'insertData' 
-                                value={input}
+                                type =  'number'
+                                name = 'insertData'
+                                value = {input}
                                 onChange = {e => setInput(e.target.value)}
                                 className = 'rounded-lg bg-structureFill px-4 py-2 mb-4'
                             />
-                            <button onClick = {handleInsert} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> Insert </button>
-                            <button onClick = {handleMerge} className = 'mb-4 px-4 py-2 bg-softgray text-white rounded cursor-pointer'> MergeSort </button>
+                            <button onClick = {handleInsert} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> Insert </button>
+                            <button onClick = {handleMerge} className = 'mb-4 px-4 py-2 bg-borderGreen text-white rounded cursor-pointer'> MergeSort </button>
                         </div>
                     </div>
                 </div>

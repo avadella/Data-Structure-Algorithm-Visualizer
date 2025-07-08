@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react';
-import { ArrayItem } from '../Structures/ArrayItem';
+import { NodeItem } from '../Structures/NodeItem';
 
-export function useArray(initialData: ArrayItem[]){
+export function useArray(initialData: NodeItem[]){
     const nextId = useRef(initialData.length + 1);
-    const [arrayData, setArrayData] = useState<ArrayItem[]>(initialData);
+    const [arrayData, setArrayData] = useState<NodeItem[]>(initialData);
 
     const shuffleArray = () => {
         const newArray = [...arrayData];

@@ -1,6 +1,6 @@
-import { ArrayItem } from '../Structures/ArrayItem';
+import { NodeItem } from '../Structures/NodeItem';
 
-export function mergeSort (array: ArrayItem[], left: number, right: number ) {
+export function mergeSort (array: NodeItem[], left: number, right: number ) {
     if (left >= right){
         return;
     }
@@ -11,7 +11,7 @@ export function mergeSort (array: ArrayItem[], left: number, right: number ) {
     merge(array, left, mid, right);
 }
 
-function merge (array: ArrayItem[], left: number, mid: number, right: number) {
+function merge (array: NodeItem[], left: number, mid: number, right: number) {
     const leftArray = array.slice(left, mid+1);
     const rightArray = array.slice(mid + 1, right+1);
 
